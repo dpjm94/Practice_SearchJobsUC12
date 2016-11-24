@@ -14,8 +14,8 @@ public class Inventory {
         }
 
 
-        public void addJob(String job_id,Category category, Location location, EmployType employType){
-            Job job = new Job(job_id, category,location,employType);
+        public void addJob(String job_id,JobSpec spec){
+            Job job = new Job(job_id, spec);
             jobs.add(job);
         }
 
@@ -31,7 +31,7 @@ public class Inventory {
         }
 
         //search category
-        public List search(Job searchJob){
+        public List search(JobSpec searchJob){
             List matchingJobs = new LinkedList();
             for(Iterator i = jobs.iterator(); i.hasNext();){
                 Job job = (Job)i.next();

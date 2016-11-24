@@ -2,40 +2,46 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by donalmaher on 23/11/2016.
+ * Created by donalmaher on 24/11/2016.
  */
 public class FindCategoryTester {
 
-    public static void main(String args[]){
+
+    public static void main(String[] args) {
 
         Inventory inventory = new Inventory();
         initializeInventory(inventory);
 
-        //Customer looking for Accounting
-        Job whatCustomerWant = new Job("01",Category.ACCOUNTING,Location.DUBLIN,EmployType.PARTTIME);
+        JobSpec WhatUserWant = new JobSpec(Category.ACCOUNTING, Location.ANTRIM, EmployType.PARTTIME);
 
-
-        List matchingJobs = inventory.search(whatCustomerWant);
-
-        if(matchingJobs.isEmpty()){
-
-            System.out.println(" Customer, You might like these job in the following: ");
+        List matchingJobs = inventory.search(WhatUserWant);
+        if (!matchingJobs.isEmpty()) {
+            System.out.println("Customer, you might like:");
             for(Iterator i = matchingJobs.iterator(); i.hasNext();){
                 Job job = (Job)i.next();
-                System.out.println(" We have a " +
-                job.getCategory() + " in " + job.getLocation() + "\n" +
-                " You must be " + job.getEmployType());
+
+                JobSpec spec = job.getJobSpec();
+                System.out.println(" We have a "
+                        + spec.getCategory() + " in " +
+                        spec.getLocation() + " And they want employ type: " +
+                        spec.getEmployType() + "\n ----------------------");
             }
-        }
-        else{
-            System.out.println("Sorry Customer, there is no matching job what you looking for");
+        } else {
+            System.out.println("Sorry, Customer, there is no matching job description you want.");
         }
     }
 
     private static void initializeInventory(Inventory inventory) {
+        inventory.addJob("01",
+                new JobSpec(Category.ACCOUNTING,Location.ANTRIM, EmployType.PARTTIME));
+        inventory.addJob("02",
+                new JobSpec(Category.ACCOUNTING,Location.ANTRIM, EmployType.PARTTIME));
+        inventory.addJob("03",
+                new JobSpec(Category.ACCOUNTING,Location.KERRY, EmployType.PERMANENT));
+        inventory.addJob("04",
+                new JobSpec(Category.ACCOUNTING,Location.TIPPERARY, EmployType.PERMANENT));
+        inventory.addJob("05",
+                new JobSpec(Category.ACCOUNTING,Location.DUBLIN, EmployType.PERMANENT));
 
-       inventory.addJob("",Category.ACCOUNTING,Location.DUBLIN,EmployType.PARTTIME);
     }
-
-
 }
