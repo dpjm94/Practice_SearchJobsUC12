@@ -31,15 +31,14 @@ public class Inventory {
         }
 
         //search category
-        public List search(JobSpec searchJob){
+        public List search(JobSpec searchSpec){
             List matchingJobs = new LinkedList();
             for(Iterator i = jobs.iterator(); i.hasNext();){
                 Job job = (Job)i.next();
 
-                Category category = searchJob.getCategory();
-                if((category != null) && (!category.equals("")) &&
-                        (!category.equals(job.getCategory())))
-                    continue;
+                JobSpec jobSpec = job.getJobSpec();
+                if(searchSpec.getCategory() != jobSpec.getCategory())
+                   continue;
                 matchingJobs.add(job);
             }
             return matchingJobs;
