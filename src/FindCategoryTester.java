@@ -16,7 +16,7 @@ public class FindCategoryTester {
 
         List matchingJobs = inventory.search(WhatUserWant);
         if (!matchingJobs.isEmpty()) {
-            System.out.println("Customer, you might like:");
+            System.out.println(" Customer, you might like: ");
             for(Iterator i = matchingJobs.iterator(); i.hasNext();){
                 Job job = (Job)i.next();
 
