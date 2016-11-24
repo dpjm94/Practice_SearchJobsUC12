@@ -1,3 +1,6 @@
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * Created by donalmaher on 23/11/2016.
  */
@@ -8,15 +11,21 @@ public class FindCategoryTester {
         Inventory inventory = new Inventory();
         initializeInventory(inventory);
 
-        //Customer looking for Accounting in Dublin, only parttime job
-        Job whatCustomerWant = new Job("01","Accounting","Dublin","PartTime");
+        //Customer looking for Accounting
+        Job whatCustomerWant = new Job("01",Category.ACCOUNTING,Location.DUBLIN,EmployType.PARTTIME);
 
-        Job job = inventory.search(whatCustomerWant);
-        if(job != null){
-            System.out.println(" Customer, You might like these job in the following: " +
-            job.getCategory() + " in " + job.getLocation() + ". " +
-            " You must be " + job.getEmployType());
 
+        List matchingJobs = inventory.search(whatCustomerWant);
+
+        if(matchingJobs.isEmpty()){
+
+            System.out.println(" Customer, You might like these job in the following: ");
+            for(Iterator i = matchingJobs.iterator(); i.hasNext();){
+                Job job = (Job)i.next();
+                System.out.println(" We have a " +
+                job.getCategory() + " in " + job.getLocation() + "\n" +
+                " You must be " + job.getEmployType());
+            }
         }
         else{
             System.out.println("Sorry Customer, there is no matching job what you looking for");
@@ -25,7 +34,7 @@ public class FindCategoryTester {
 
     private static void initializeInventory(Inventory inventory) {
 
-       inventory.addJob("01","Accounting","Dublin","PartTime");
+       inventory.addJob("",Category.ACCOUNTING,Location.DUBLIN,EmployType.PARTTIME);
     }
 
 

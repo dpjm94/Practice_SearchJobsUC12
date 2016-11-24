@@ -1,4 +1,5 @@
 public enum Category {
+
     ACCOUNTING, ARCHITECTURE, ARTS, ENTERTAINMENT, CONSTRUCTION,
     EDUCATION, ENGINEERING, BANKING, HOTEL, HR, INSURANCE,
     IT, MARKETING, SALES, SECURITY, SCIENCE, SPORT, TECHNICAL;
@@ -22,7 +23,9 @@ public enum Category {
             case SCIENCE :     return "Science";
             case SPORT :     return "Sport";
             case TECHNICAL :     return "Technical";
+            case IT: return "IT";
             default:       return "Unsecified";
+
         }
     }
 

@@ -14,7 +14,7 @@ public class Inventory {
         }
 
 
-        public void addJob(String job_id,String category, String location, String employType){
+        public void addJob(String job_id,Category category, Location location, EmployType employType){
             Job job = new Job(job_id, category,location,employType);
             jobs.add(job);
         }
@@ -30,25 +30,18 @@ public class Inventory {
             return null;
         }
 
-        public Job search(Job searchJob){
+        //search category
+        public List search(Job searchJob){
+            List matchingJobs = new LinkedList();
             for(Iterator i = jobs.iterator(); i.hasNext();){
                 Job job = (Job)i.next();
 
-                String category = searchJob.getCategory();
+                Category category = searchJob.getCategory();
                 if((category != null) && (!category.equals("")) &&
-                        (!category.equalsIgnoreCase(job.getCategory())))
+                        (!category.equals(job.getCategory())))
                     continue;
-
-                String location = searchJob.getLocation();
-                if((location != null) && (!location.equals("")) &&
-                        (!location.equals(job.getLocation())))
-                    continue;
-
-                String employType = searchJob.getEmployType();
-                if((employType != null) && (!employType.equals("")) &&
-                        (!category.equals(job.getEmployType())))
-                    continue;
+                matchingJobs.add(job);
             }
-            return null;
+            return matchingJobs;
         }
     }

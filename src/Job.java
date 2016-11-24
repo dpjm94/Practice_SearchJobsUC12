@@ -4,12 +4,12 @@
 public class Job {
 
     private String job_id;
-    private String category;
-    private String location;
-    private String employType;
+    private Category category;
+    private Location location;
+    private EmployType employType;
 
 
-    public Job(String job_id, String category, String location, String employType) {
+    public Job(String job_id, Category category, Location location, EmployType employType) {
         this.job_id = job_id;
         this.category = category;
         this.location = location;
@@ -21,27 +21,16 @@ public class Job {
         return job_id;
     }
 
-    public String getCategory() {
+
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getEmployType() {
+    public EmployType getEmployType() {
         return employType;
-    }
-
-    public void setEmployType(String employType) {
-        this.employType = employType;
     }
 }

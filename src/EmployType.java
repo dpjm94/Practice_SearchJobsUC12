@@ -11,7 +11,7 @@ public enum EmployType {
             case TEMPORARY: return "Temporary";
             case PARTTIME:    return "Part-time";
             case PERMANENT:     return "Permanent";
-            default:       return "Unsecified";
+            default:       return "invalid value";
         }
     }
 }
