@@ -7,21 +7,21 @@ import java.util.List;
  */
 public class Inventory {
 
-    private List jobs;
+    private List inventory;
 
         public Inventory() {
-            jobs = new LinkedList();
+            inventory = new LinkedList();
         }
 
 
         public void addJob(String job_id,JobSpec spec){
             Job job = new Job(job_id, spec);
-            jobs.add(job);
+            inventory.add(job);
         }
 
 
         public Job getJob(String job_id){
-            for(Iterator i = jobs.iterator(); i.hasNext();){
+            for(Iterator i = inventory.iterator(); i.hasNext();){
                 Job job = (Job)i.next();
                 if(job.getJob_id().equals(job_id)){
                     return job;
@@ -33,7 +33,7 @@ public class Inventory {
         //search category
         public List search(JobSpec searchSpec){
             List matchingJobs = new LinkedList();
-            for(Iterator i = jobs.iterator(); i.hasNext();){
+            for(Iterator i = inventory.iterator(); i.hasNext();){
                 Job job = (Job)i.next();
 
                 JobSpec jobSpec = job.getJobSpec();
