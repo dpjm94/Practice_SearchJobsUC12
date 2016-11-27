@@ -37,11 +37,17 @@ public class FindCategoryTester {
         inventory.addJob("02",
                 new JobSpec(Category.ACCOUNTING,Location.ANTRIM, EmployType.PARTTIME));
         inventory.addJob("03",
-                new JobSpec(Category.ACCOUNTING,Location.KERRY, EmployType.PERMANENT));
+                new JobSpec(Category.MARKETING,Location.KERRY, EmployType.PERMANENT));
         inventory.addJob("04",
                 new JobSpec(Category.ACCOUNTING,Location.TIPPERARY, EmployType.PERMANENT));
         inventory.addJob("05",
                 new JobSpec(Category.ACCOUNTING,Location.DUBLIN, EmployType.PERMANENT));
+        inventory.addJob("06",
+                new JobSpec(Category.ARTS,Location.DUBLIN, EmployType.PERMANENT));
+        inventory.addJob("07",
+                new JobSpec(Category.ACCOUNTING,Location.KERRY, EmployType.PERMANENT));
+        inventory.addJob("08",
+                new JobSpec(Category.ARCHITECTURE,Location.DERRY, EmployType.PERMANENT));
 
     }
 }
