@@ -17,7 +17,7 @@ public class Job {
         return job_id;
     }
 
-    public JobSpec getJobSpec(){
+    public JobSpec getSpec(){
         return spec;
     }
 }
