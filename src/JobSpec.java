@@ -1,10 +1,52 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 /**
  * Created by donalmaher on 27/11/2016.
  */
-public abstract class JobSpec {
+public class JobSpec {
+
+    private Map properties;
+
+    public JobSpec(Map properties) {
+        if (properties == null) {
+            this.properties = new HashMap();
+        } else {
+            this.properties = new HashMap(properties);
+        }
+    }
 
 
-        private Category category;
+    public Object getProperty(String propertyName) {
+        return properties.get(propertyName);
+    }
+
+    public Map getProperties() {
+        return properties;
+    }
+
+
+    public boolean matches(JobSpec otherSpec) {
+        for (Iterator i = otherSpec.getProperties().keySet().iterator();
+             i.hasNext(); ) {
+            String propertyName = (String) i.next();
+            if (!properties.get(propertyName).equals(
+                    otherSpec.getProperty(propertyName))) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+
+
+
+
+
+    /* private Category category;
         private Location location;
         private EmployType employType;
 
@@ -29,7 +71,7 @@ public abstract class JobSpec {
             return employType;
         }
 
-        public boolean matches(JobSpec otherSpec){
+       public boolean matches(JobSpec otherSpec){
             if(category!= otherSpec.category)
                 return false;
             if(location!= otherSpec.location)
@@ -37,5 +79,5 @@ public abstract class JobSpec {
             if(employType!= otherSpec.employType)
                 return false;
             return true;
-        }
-    }
+        }*/
+

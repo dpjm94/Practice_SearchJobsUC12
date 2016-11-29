@@ -31,13 +31,13 @@ public class Inventory {
         }
 
         //search category
-        public List search(CategoryJobSpec searchSpec){
-            List matchingCategorys = new LinkedList();
+        public List search(JobSpec searchSpec){
+            List matchingJobs = new LinkedList();
             for(Iterator i = inventory.iterator(); i.hasNext();){
-                CategoryJob categoryJob = (CategoryJob) i.next();
-                if(categoryJob.getSpec().matches(searchSpec))
-                matchingCategorys.add(categoryJob);
+                Job job = (Job) i.next();
+                if(job.getSpec().matches(searchSpec))
+                matchingJobs.add(job);
             }
-            return matchingCategorys;
+            return matchingJobs;
         }
     }
