@@ -1,7 +1,7 @@
 /**
  * Created by donalmaher on 27/11/2016.
  */
-public class JobSpec {
+public abstract class JobSpec {
 
 
         private Category category;
