@@ -3,9 +3,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by donalmaher on 24/11/2016.
- */
+
 public class FindJobTester {
 
 
@@ -16,7 +14,7 @@ public class FindJobTester {
 
         Map properties = new HashMap();
         //properties.put("category",Category.ACCOUNTING);
-        properties.put("employType",EmployType.PARTTIME);
+        //properties.put("employType",EmployType.PARTTIME);
         properties.put("location",Location.KERRY);
         JobSpec custSpec = new JobSpec(properties);
 
