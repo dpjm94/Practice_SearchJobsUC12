@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Created by donalmaher on 24/11/2016.
  */
-public class FindCategoryTester {
+public class FindJobTester {
 
 
     public static void main(String[] args) {
@@ -25,10 +25,10 @@ public class FindCategoryTester {
 
         //CategoryJobSpec WhatUserWant = new CategoryJobSpec(Category.MARKETING,Location.KERRY, EmployType.PERMANENT);
 
-        List matchingCategorys = inventory.search(custSpec);
-        if (!matchingCategorys.isEmpty()) {
+        List matchingJobs = inventory.search(custSpec);
+        if (!matchingJobs.isEmpty()) {
             System.out.println(" Customer, you might like: ");
-            for(Iterator i = matchingCategorys.iterator(); i.hasNext();){
+            for(Iterator i = matchingJobs.iterator(); i.hasNext();){
                 Job job = (Job)i.next();
                 JobSpec spec = job.getSpec();
                 System.out.println(" We have a "

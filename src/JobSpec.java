@@ -2,9 +2,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * Created by donalmaher on 27/11/2016.
- */
+
 public class JobSpec {
 
     private Map properties;
