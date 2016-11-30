@@ -1,0 +1,48 @@
+# Search jobs
+# UC-12:
+
+
+## Brief Use Case:
+This use case shows the user will able to search for job on the system. First user selects what type of job and click search and will display list of jobs.
+
+
+## Casual Use Case:
+User selects “Search For Job” option. The system opens the UI. The user selects type of job , selects search. The system
+
+then received all jobs from the database matching these selected attributes and displays a list to user. The user selects a job by clicking more details.
+
+
+## Fully Dressed Use Case:
+
+**Actor:** User
+
+**Description:** This use case lets the user search for jobs on system.
+
+**Interest:** User should able to search their interest jobs.
+
+**Precondition:**
+
+**Success Guarantee:** Search result will be displayed based on searching requirement defined by customer.
+
+**Main Success Scenario:**
+
+	1. The user selects the Search jobs option
+
+	2. The user enters a type of job in the search.
+
+	3. The user clicks the search button.
+
+	4. The system returns a list of jobs requested job accordingly.
+
+	5. The user browses the list and selects a job to view.
+
+	6. The system loads up the jobs advert with all the included details.
+
+####**Requirement:** MySQL database
+
+####**Exceptions:**
+	1. The user fails select type of job before clicks the search button,
+           back to step 1.
+
+
+####**Post-condition:** User got what he/she wanted.
