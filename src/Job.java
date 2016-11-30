@@ -3,8 +3,8 @@
  */
 public class Job {
 
-    private String job_id;
-    private JobSpec spec;
+    private final String job_id;
+    private final JobSpec spec;
 
 
     public Job(String job_id, JobSpec spec) {

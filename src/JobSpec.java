@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class JobSpec {
 
-    private Map properties;
+    private final Map properties;
 
     public JobSpec(Map properties) {
         if (properties == null) {
