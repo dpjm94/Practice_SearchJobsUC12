@@ -16,7 +16,8 @@ public class FindJobTester {
         //properties.put("category",Category.ACCOUNTING);
         //properties.put("employType",EmployType.PARTTIME);
         properties.put("location",Location.KERRY);
-        JobSpec custSpec = new JobSpec(properties);
+        JobSpec custSpec;
+        custSpec = new JobSpec(properties);
 
 
 
@@ -77,5 +78,10 @@ public class FindJobTester {
         properties.put("employType",EmployType.PARTTIME);
         inventory.addJob("06", new JobSpec(properties));
         inventory.addJob("07", new JobSpec(properties));
+
+
+        properties.put("category",Category.BANKING);
+        properties.put("employType",EmployType.PARTTIME);
+        inventory.addJob("08", new JobSpec(properties));
     }
 }

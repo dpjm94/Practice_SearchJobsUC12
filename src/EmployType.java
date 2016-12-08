@@ -8,10 +8,10 @@ public enum EmployType {
             case CONTRACT:   return "Contract";
             case JOBSHARE:   return "Job share";
             case SEASONAL:   return "Seasonal";
-            case TEMPORARY: return "Temporary";
-            case PARTTIME:    return "Part-time";
-            case PERMANENT:     return "Permanent";
-            default:       return "invalid value";
+            case TEMPORARY:  return "Temporary";
+            case PARTTIME:   return "Part-time";
+            case PERMANENT:  return "Permanent";
+            default:         return "invalid value";
         }
     }
 }
