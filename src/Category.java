@@ -1,7 +1,7 @@
 public enum Category {
 
     ACCOUNTING, ARCHITECTURE, ARTS, ENTERTAINMENT, CONSTRUCTION,
-    EDUCATION, ENGINEERING, BANKING, HOTEL, HR, INSURANCE,
+    EDUCATION, ENGINEERING, BANKING, HOTEL, HN, INSURANCE,
     IT, MARKETING, SALES, SECURITY, SCIENCE, SPORT, TECHNICAL;
 
     public String toString() {
@@ -15,7 +15,7 @@ public enum Category {
             case ENGINEERING:    return "Engineering";
             case BANKING :     return "Engineering";
             case HOTEL :     return "Hotel";
-            case HR :     return "Hr";
+            case HN:     return "HN";
             case INSURANCE :     return "Insurance";
             case MARKETING :     return "Marketing";
             case SALES :     return "Sales";
